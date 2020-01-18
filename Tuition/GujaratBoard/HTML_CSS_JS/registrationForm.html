@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type" />
+    <title>Registration Form</title>
+
+    <style type="text/css">
+        h1 {
+            font-family: Arabic Typesetting;
+            font-size: larger;
+            line-height: normal;
+            color: #38ff18;
+            font-weight: bold;
+            font-style: normal;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body style="color: rgb(0, 0, 0); background-color: silver;" alink="#000099" link="#000099" vlink="#990099">
+    <form onsubmit="return vf();" method="POST" action="https://example.com" name="f1">
+        <br />
+        <h1>Registration Form</h1>
+        <br />
+        <table style="text-align: left; width: 100%;" border="0" cellpadding="2" cellspacing="2">
+            <tbody>
+                <tr>
+                    <td style="vertical-align: top;">
+                        <label>First name </label>
+                    </td>
+                    <td style="vertical-align: top;"><input name="fname" /></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">
+                        <label>Last name </label>
+                    </td>
+                    <td style="vertical-align: top;"><input name="lname" /></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">
+                        <label>Email </label>
+                    </td>
+                    <td style="vertical-align: top;">
+                        <input name="email" type="email" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">
+                        <label>Password </label>
+                    </td>
+                    <td style="vertical-align: top;">
+                        <input name="pass" type="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">
+                        <label>Confirm Password </label>
+                    </td>
+                    <td style="vertical-align: top;">
+                        <input name="cpass" type="password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">
+                        <label>Birth-date </label>
+                    </td>
+                    <td style="vertical-align: top;">
+                        <input name="bdate" type="date" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">
+                        <label>Mobile </label>
+                    </td>
+                    <td style="vertical-align: top;">
+                        <input name="mob" type="number" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">
+                        <label>Gender </label>
+                    </td>
+                    <td style="vertical-align: top;">
+                        <input value="0" name="gender" type="radio" /> Male
+                        <input value="1" name="gender" type="radio" /> Female
+                        <input value="2" name="gender" type="radio" /> Trans
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">
+                        <label>Hobbies </label>
+                    </td>
+                    <td style="vertical-align: top;">
+                        <input value="0" name="hob" type="checkbox" /> Singing
+                        <input checked="checked" value="1" name="hob" type="checkbox" /> Fighting
+                        <input value="2" name="hob" type="checkbox" /> Sleeping
+                        <input value="3" name="hob" type="checkbox" /> Gaming
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">
+                        <label>City </label>
+                    </td>
+                    <td style="vertical-align: top;">
+                        <select name="city">
+                            <option value="0">Select city</option>
+                            <option value="1">Surat</option>
+                            <option value="2">Daman</option>
+                            <option value="3">Abu</option>
+                            <option value="4">Goa</option>
+                            <option value="5">Ooty</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;">
+                        <label>Address </label>
+                    </td>
+                    <td style="vertical-align: top;">
+                        <textarea cols="30" rows="3" name="add"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: top;"></td>
+                    <td style="vertical-align: top;">
+                        <input value="Submit" name="Submit" type="submit" />
+                        <input value="Reset" name="Reset" type="reset" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <br />
+    </form>
+    <script>
+        function vf() {
+            var fn = document.f1.fname.value;
+            if (!fn) {
+                alert("First name is necessary.");
+                document.f1.fname.focus();
+                return false;
+            }
+
+            var ln = document.f1.lname.value;
+            if (!ln) {
+                alert("Last name is necessary.");
+                document.f1.lname.focus();
+                return false;
+            }
+
+            var pass = document.f1.pass.value;
+            if (!pass) {
+                alert("Pass is necessary.");
+                document.f1.pass.focus();
+                return false;
+            }
+
+            var cpass = document.f1.cpass.value;
+            if (!cpass) {
+                alert("Confirm pass is necessary.");
+                document.f1.cpass.focus();
+                return false;
+            }
+
+            if (pass != cpass) {
+                alert("Password & Confirm password must be same.");
+                document.f1.pass.focus();
+                return false;
+            }
+
+            var ct = document.f1.city.value;
+            if (ct == 0) {
+                alert("City must be selected.");
+                document.f1.city.focus();
+                return false;
+            }
+
+            var mob = document.f1.mob.value;
+            if (!mob || isNaN(mob)) {
+                alert("Valid mobile number is necessary.");
+                document.f1.mob.focus();
+                return false;
+            }
+
+            var gen = document.f1.gender;
+            if (!gen[0].checked && !gen[1].checked && !gen[2].checked) {
+                alert("You need to specify your gender, else our system will consider it as female.");
+                gen[0].focus();
+                return false;
+            }
+
+            var hob = document.f1.hob;
+            if (!hob[0].checked && !hob[1].checked && !hob[2].checked && !hob[3].checked) {
+                alert("Hobby is necessary.");
+                hob[0].focus();
+                return false;
+            }
+
+            alert("Your data has been saved");
+            return false;
+        }
+    </script>
+</body>
+
+</html>
