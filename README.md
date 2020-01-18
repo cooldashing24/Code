@@ -3,8 +3,7 @@
 A list of practical programs|projects that anyone can solve in any programming language.
 
 * WAP to print **Hello, World!**.
-  * For loop
-    * [C - language](Tuition/GujaratBoard/C/)
+  * [C - language](Tuition/GujaratBoard/C/helloWorld.c)
 
 * WAP to print **computer 5 times** using different loops.
   * For loop
@@ -36,7 +35,7 @@ A list of practical programs|projects that anyone can solve in any programming l
 
 * WAP to print **factorial of a given number** using different loops.
   * For loop
-    * [C - language](Tuition/GujaratBoard/C/sumOfSeriesBetweenStartToEndValuesUsingForLoop.c)
+    * [C - language](Tuition/GujaratBoard/C/factorialForNUsingForLoop.c)
 
 > * This programs are developed in Ubuntu based OS.
 > * G++ for C
